@@ -16,6 +16,7 @@ Below is a specific list of the current features.
 * Support for disc images in CUE/BIN format (e.g., [Redump](http://redump.org/)), no other file extensions are presently supported.
 * Support for nested folders on target SD card.
 * Support for disc images with more than one track (i.e., multiple BIN files).
+* Folders without a CUE and at least one BIN file are ignored.
 
 ## Example Usage
 Generic usage:
