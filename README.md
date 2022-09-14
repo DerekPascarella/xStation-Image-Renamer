@@ -29,6 +29,7 @@ In this example, the directory structure of our SD card (E:\) appears as follows
 ```
 E:\
 ├── 00xstation
+│   └── ---------- <REMOVED FOR BREVITY> ----------
 ├── JAPAN
 │   └── ...Iru! (Japan)
 │       ├── ...Iru! (Japan) (Track 1).bin
@@ -57,6 +58,7 @@ Before running this utility, we'll rename each game folder to how we'd like it t
 ```
 E:\
 ├── 00xstation
+│   └── ---------- <REMOVED FOR BREVITY> ----------
 ├── JAPAN
 │   └── ...Iru!
 │       ├── ...Iru! (Japan) (Track 1).bin
@@ -140,6 +142,7 @@ After processing, the directory structure of our SD card (E:\) now appears as fo
 ```
 E:\
 ├── 00xstation
+│   └── ---------- <REMOVED FOR BREVITY> ----------
 ├── JAPAN
 │   └── ...Iru!
 │       ├── ...Iru! (Track 1).bin
