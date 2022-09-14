@@ -10,6 +10,12 @@ Please do not run this program against a copy of your daily-use xStation SD card
 ## Current Version
 xStation Image Renamer is currently at version [1.0](https://github.com/DerekPascarella/xStation-Image-Renamer/raw/main/xstation_renamer.exe).
 
+## Changelog
+* Version 1.1 (2022-09-15)
+  * Added proper CUE parsing to ignore files that aren't associated with disc image, as well as correctly process track files that aren't in alphanumeric order.
+* Version 1.0 (2022-09-14)
+  * Initial release.
+
 ## Supported Features
 Below is a specific list of the current features.
 
