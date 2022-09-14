@@ -140,7 +140,7 @@ Proceed? (Y/N) y
 Disc images processed: 3
 Ignored for no CUE:    0
 Ignored for no BINs:   0
-Processing time:       0.17 seconds
+Processing time:       0.09 seconds
 
 ```
 
