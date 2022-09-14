@@ -5,6 +5,8 @@ The xStation uses the first data track of a disc image (minus its file extension
 
 Pointing this utility as an xStation-formatted SD card will automatically perform all of the file renaming, as well as CUE modification. The only pre-requisite is reaming each game's folder to what which should be displayed in xStation's menu.
 
+Please do not run this program against a copy of your daily-use xStation SD card. Instead, use a copy or backup.
+
 ## Current Version
 xStation Image Renamer is currently at version [1.0](https://github.com/DerekPascarella/xStation-Image-Renamer/raw/main/xstation_renamer.exe).
 
@@ -133,51 +135,42 @@ Processing time:       0.17 seconds
 
 ```
 
-After conversion, the following folders appear within the `DREAMCAST` folder in the root of the SD card.
+After processing, the directory structure of our SD card (E:\) now appears as follows.
 
 ```
-18 WHEELER - AMERICAN PRO TRUCKER
-4 WHEEL THUNDER
-4X4 EVOLUTION
-ALICE DREAMS TOURNAMENT
-ALIEN FRONT ONLINE
-ALONE IN THE DARK - THE NEW NIGHTMARE
-AQUA GT
+E:\
+├── 00xstation
+├── JAPAN
+│   └── ...Iru!
+│       ├── ...Iru! (Track 1).bin
+│       ├── ...Iru! (Track 2).bin
+|       └── ...Iru!.cue
+├── TRANSLATIONS
+│   └── Harmful Park
+│       ├── Harmful Park.bin
+│       └── Harmful Park.cue
+└── USA
+    └── Tomb Raider
+        ├── Tomb Raider (Track 01).bin
+        ├── Tomb Raider (Track 02).bin
+        ├── Tomb Raider (Track 03).bin
+        ├── Tomb Raider (Track 04).bin
+        ├── Tomb Raider (Track 05).bin
+         ---------- <REMOVED FOR BREVITY> ----------
+        ├── Tomb Raider (Track 55).bin
+        ├── Tomb Raider (Track 56).bin
+        ├── Tomb Raider (Track 57).bin
+        └── Tomb Raider.cue
 ```
 
-Below, we see an example of a single-folder multi-disc game.
+Below, we see an example of a CUE sheet that was automatically modified to reflect the new filenames of its tracks.
 
 ```
-disc1_disc.gdi
-disc1_track01.bin
-disc1_track02.raw
-disc1_track03.bin
-disc1_track04.raw
-disc1_track05.bin
-disc2_disc.gdi
-disc2_track01.bin
-disc2_track02.raw
-disc2_track03.bin
-disc2_track04.raw
-disc2_track05.bin
-```
-
-Furthermore, the GDI files themselves are modified to reflect the new filenames.
-
-```
-5
-1 0 4 2352 disc1_track01.bin 0
-2 756 0 2352 disc1_track02.raw 0
-3 45000 4 2352 disc1_track03.bin 0
-4 100806 0 2352 disc1_track04.raw 0
-5 101407 4 2352 disc1_track05.bin 0
-```
-
-```
-5
-1 0 4 2352 disc2_track01.bin 0
-2 756 0 2352 disc2_track02.raw 0
-3 45000 4 2352 disc2_track03.bin 0
-4 59804 0 2352 disc2_track04.raw 0
-5 60405 4 2352 disc2_track05.bin 0
+FILE "...Iru! (Track 01).bin" BINARY
+  TRACK 01 MODE2/2352
+    INDEX 01 00:00:00
+FILE "...Iru! (Track 02).bin" BINARY
+  TRACK 02 AUDIO
+    INDEX 00 00:00:00
+    INDEX 01 00:02:00
 ```
