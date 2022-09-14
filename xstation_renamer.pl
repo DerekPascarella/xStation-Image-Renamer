@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 #
-# xStation Image Renamer v1.0
+# xStation Image Renamer v1.1
 # Written by Derek Pascarella (ateam)
 #
-# A utility to rename CUE/BIN files to reflect folder name, as
-# to customize game list as it appears in xStation's menu.
+# A utility to rename CUE/BIN files to reflect folder name, as to customize game list as
+# it appears in xStation's menu.
 
 # Include necessary modules.
 use strict;
@@ -53,7 +53,7 @@ $sd_folder_rule->not_name("..");
 $sd_folder_rule->not_name("00xstation");
 @sd_folders = $sd_folder_rule->in($sd_path_source);
 
-# Iterate through all folders and subfolders, counting those that contain files.
+# Iterate through all folders and subfolders, building array of those that contain files.
 foreach(@sd_folders)
 {
 	# Store contents of current folder.
@@ -76,7 +76,7 @@ if(scalar(@sd_folders_with_files) == 0)
 }
 
 # Print program information.
-print "\nxStation Image Renamer v1.0\n";
+print "\nxStation Image Renamer v1.1\n";
 print "Written by Derek Pascarella (ateam)\n\n";
 print "This program will process Redump-formatted CUE/BIN disc images\n";
 print "stored in separate folders within the following location:\n\n";
@@ -105,7 +105,6 @@ foreach my $sd_subfolder (@sd_folders_with_files)
 {
 	# Define/initialize variables.
 	my $sd_subfolder_cue;
-	my @sd_subfolder_bins = ();
 
 	# Store base folder name as game name.
 	my $game_name = basename($sd_subfolder);
@@ -122,13 +121,13 @@ foreach my $sd_subfolder (@sd_folders_with_files)
 	my @sd_subfolder_files = $sd_subfolder_rule->in($sd_subfolder);
 
 	# Iterate through subfolder to locate CUE file.
-	foreach my $sd_subfolder_file (@sd_subfolder_files)
+	foreach(@sd_subfolder_files)
 	{
-		(my $name, my $path, my $suffix) = fileparse($sd_subfolder_file, qr"\..[^.]*$");
+		(my $name, my $path, my $suffix) = fileparse($_, qr"\..[^.]*$");
 
 		if(lc($suffix) eq ".cue")
 		{
-			$sd_subfolder_cue = basename($sd_subfolder_file);
+			$sd_subfolder_cue = basename($_);
 		}
 	}
 
@@ -149,14 +148,20 @@ foreach my $sd_subfolder (@sd_folders_with_files)
 		next;
 	}
 
-	# Iterate through subfolder to locate BIN files.
-	foreach my $sd_subfolder_file (@sd_subfolder_files)
+	# Read contents of CUE sheet.
+	my $sd_subfolder_cue_contents = &read_file($sd_subfolder . "/" . $sd_subfolder_cue);
+
+	# Parse CUE and build array of BINs.
+	my @sd_subfolder_tracks = $sd_subfolder_cue_contents =~ /FILE\s"(.*?)"/gm;
+	my @sd_subfolder_bins = ();
+
+	foreach(@sd_subfolder_tracks)
 	{
-		(my $name, my $path, my $suffix) = fileparse($sd_subfolder_file, qr"\..[^.]*$");
+		(my $name, my $path, my $suffix) = fileparse($_, qr"\..[^.]*$");
 
 		if(lc($suffix) eq ".bin")
 		{
-			push(@sd_subfolder_bins, basename($sd_subfolder_file));
+			push(@sd_subfolder_bins, basename($_));
 		}
 	}
 
@@ -182,9 +187,6 @@ foreach my $sd_subfolder (@sd_folders_with_files)
 	# Print status message.
 	print "  -Renaming CUE: " . $game_name . ".cue\n";
 	rename($sd_subfolder . "/" . $sd_subfolder_cue, $sd_subfolder . "/" . $game_name . ".cue");
-
-	# Read contents of CUE sheet.
-	my $sd_subfolder_cue_contents = &read_file($sd_subfolder . "/" . $game_name . ".cue");
 
 	# Print status message.
 	print "  -Renaming BINs: ";
@@ -279,7 +281,7 @@ sub show_error
 {
 	my $error = $_[0];
 
-	die "\nxStation Image Renamer v1.0\nWritten by Derek Pascarella (ateam)\n\n$error\n\nUSAGE: xstation_renamer <PATH_TO_SD_CARD>\n\n";
+	die "\nxStation Image Renamer v1.1\nWritten by Derek Pascarella (ateam)\n\n$error\n\nUSAGE: xstation_renamer <PATH_TO_SD_CARD>\n\n";
 }
 
 # Subroutine to read a specified file.
