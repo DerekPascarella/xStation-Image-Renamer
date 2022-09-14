@@ -13,7 +13,7 @@ xStation Image Renamer is currently at version [1.0](https://github.com/DerekPas
 ## Supported Features
 Below is a specific list of the current features.
 
-* Support for disc images in CUE/BIN format (e.g., [Redump](http://redump.org/)).
+* Support for disc images in CUE/BIN format (e.g., [Redump](http://redump.org/)), no other file extensions are presently supported.
 * Support for nested folders on target SD card.
 * Support for disc images with more than one track (i.e., multiple BIN files).
 
