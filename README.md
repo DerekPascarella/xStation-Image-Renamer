@@ -94,7 +94,7 @@ Next, we'll execute `xstation_renamer.exe` at the terminal to begin processing t
 ```
 PS C:\> .\xstation_renamer.exe E:\
 
-xStation Image Renamer v1.0
+xStation Image Renamer v1.1
 Written by Derek Pascarella (ateam)
 
 This program will process Redump-formatted CUE/BIN disc images
