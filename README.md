@@ -141,7 +141,6 @@ Disc images processed: 3
 Ignored for no CUE:    0
 Ignored for no BINs:   0
 Processing time:       0.09 seconds
-
 ```
 
 After processing, the directory structure of our SD card (E:\) now appears as follows.
