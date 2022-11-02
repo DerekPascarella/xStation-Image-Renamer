@@ -3,7 +3,7 @@ A utility to rename CUE/BIN files to reflect folder name, as to customize game l
 
 The xStation uses the first data track of a disc image (minus its file extension) as that game's label in its menu. As a result, the only way to customize the way game names appear in the menu is to modify the filenames of the disc images themselves. Doing so manually is tedious, as not only do the filenames of the tracks themselves need to be renamed, but the corresponding CUE sheet must be modified to reflect said changes.
 
-Pointing this utility as an xStation-formatted SD card will automatically perform all of the file renaming, as well as CUE modification. The only pre-requisite is to rename each game's folder to that which should be displayed in xStation's menu.
+Pointing this utility as an xStation-formatted SD card will automatically perform all of the file renaming, as well as CUE modification. The only pre-requisite is to first manually rename each game's folder to that which should be displayed in xStation's menu.
 
 ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) **IMPORTANT:** *Please do not run this program against your daily-use xStation SD card. Instead, use a copy or backup until you're sure it works with your disc image collection.*
 
