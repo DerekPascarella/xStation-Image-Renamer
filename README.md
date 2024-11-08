@@ -94,7 +94,7 @@ E:\
         └── Tomb Raider (USA) (Rev 6).cue
 ```
 
-Next, we'll drag our SD card onto `xstation_renamer.exe` to begin processing the SD card.
+Next, we'll drag our SD card onto `xstation_renamer.exe` to begin processing it.
 
 ```
 
