@@ -8,9 +8,11 @@ Pointing this utility as an xStation-formatted SD card will automatically perfor
 ![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) **IMPORTANT:** *Please do not run this program against your daily-use xStation SD card. Instead, use a copy or backup until you're sure it works with your disc image collection.*
 
 ## Current Version
-xStation Image Renamer is currently at version [1.1](https://github.com/DerekPascarella/xStation-Image-Renamer/raw/main/xstation_renamer.exe).
+xStation Image Renamer is currently at version [1.2](https://github.com/DerekPascarella/xStation-Image-Renamer/raw/main/xstation_renamer.exe).
 
 ## Changelog
+* Version 1.2 (2024-11-08)
+  * Added support for dragging SD card directly onto executable for ease of use.
 * Version 1.1 (2022-09-15)
   * Added proper CUE parsing to ignore files that aren't associated with disc image, as well as correctly process track files that aren't in alphanumeric order.
 * Version 1.0 (2022-09-14)
@@ -25,7 +27,10 @@ Below is a specific list of the current features.
 * Folders without a CUE and at least one BIN file are ignored.
 
 ## Example Usage
-Generic usage:
+For convenience, an SD card can be dragged directly onto `xstation_renamer.exe`.
+
+Alternative, it can be invoked at the command line, as seen below.
+
 ```
 xstation_renamer <PATH_TO_SD_CARD>
 ```
@@ -89,10 +94,9 @@ E:\
         └── Tomb Raider (USA) (Rev 6).cue
 ```
 
-Next, we'll execute `xstation_renamer.exe` at the terminal to begin processing the SD card.
+Next, we'll drag our SD card onto `xstation_renamer.exe` to begin processing the SD card.
 
 ```
-PS C:\> .\xstation_renamer.exe E:\
 
 xStation Image Renamer v1.1
 Written by Derek Pascarella (ateam)
@@ -141,6 +145,9 @@ Disc images processed: 3
 Ignored for no CUE:    0
 Ignored for no BINs:   0
 Processing time:       0.09 seconds
+
+Press Enter to exit.
+
 ```
 
 After processing, the directory structure of our SD card (E:\) now appears as follows.
