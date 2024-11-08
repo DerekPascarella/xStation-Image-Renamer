@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# xStation Image Renamer v1.1
+# xStation Image Renamer v1.2
 # Written by Derek Pascarella (ateam)
 #
 # A utility to rename CUE/BIN files to reflect folder name, as to customize game list as
@@ -76,7 +76,7 @@ if(scalar(@sd_folders_with_files) == 0)
 }
 
 # Print program information.
-print "\nxStation Image Renamer v1.1\n";
+print "\nxStation Image Renamer v1.2\n";
 print "Written by Derek Pascarella (ateam)\n\n";
 print "This program will process Redump-formatted CUE/BIN disc images\n";
 print "stored in separate folders within the following location:\n\n";
@@ -90,7 +90,10 @@ chop(my $proceed = <STDIN>);
 # Exit if user chose not to proceed.
 if(uc($proceed) ne "Y")
 {
-	print "\n";
+	print "\nPress Enter to exit.\n";
+	
+	<STDIN>;
+
 	exit;
 }
 
@@ -273,6 +276,8 @@ print "Disc images processed: " . $count_success . "\n";
 print "Ignored for no CUE:    " . $count_fail_cue . "\n";
 print "Ignored for no BINs:   " . $count_fail_bin . "\n";
 printf "Processing time:       %.2f seconds\n\n", $stop_time - $start_time;
+print "Press Enter to exit.\n";
+<STDIN>;
 
 # Subroutine to throw a specified exception.
 #
@@ -281,7 +286,12 @@ sub show_error
 {
 	my $error = $_[0];
 
-	die "\nxStation Image Renamer v1.1\nWritten by Derek Pascarella (ateam)\n\n$error\n\nUSAGE: xstation_renamer <PATH_TO_SD_CARD>\n\n";
+	print STDERR "\nxStation Image Renamer v1.2\nWritten by Derek Pascarella (ateam)\n\n$error\n\nUSAGE: xstation_renamer <PATH_TO_SD_CARD>\n\n";
+	print "Press Enter to exit.\n";
+	
+	<STDIN>;
+	
+	exit;
 }
 
 # Subroutine to read a specified file.
