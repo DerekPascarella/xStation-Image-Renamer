@@ -29,7 +29,7 @@ Below is a specific list of the current features.
 ## Example Usage
 For convenience, an SD card can be dragged directly onto `xstation_renamer.exe`.
 
-Alternative, it can be invoked at the command line, as seen below.
+Alternatively, it can be invoked at the command line, as seen below.
 
 ```
 xstation_renamer <PATH_TO_SD_CARD>
